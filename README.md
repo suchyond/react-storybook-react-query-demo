@@ -33,7 +33,7 @@ Using provided UI components, implement following modifications, bugfixes or new
 - [x] **UI1**: Style `Header` so the button is aligned on the right
 - [x] **UI2**: Style `ListItem` so action buttons are aligned on the right
 - [x] **UI3**: Style `ListItem` so the action buttons are only visible when hovering over the item
-- [ ] **F1**: Modify `Footer` to show 0 when no value(s) were passed
+- [x] **F1**: Modify `Footer` to show 0 when no value(s) were passed
 - [ ] **F2**: After button in header is clicked, show `Form` component in the `Header` instead of the clicked button. If the Form is submitted, a new list should be saved on backend and list of all items updated
 - [ ] **F3**: When edit button on todo item is clicked, the row should be replaced by the `Form` component (same as for creating new todo item)
 - [ ] **F4**: Load items from API
