@@ -14,7 +14,7 @@ Please, read following instructions and let us know if anything is not clear.
 * Send us your work preferably as a link to git repository (e.g. GitHub).
 
 ## Time estimation
-* First read the assigment, check the provided code, and make clear you understand what we ask for.
+* First read the assignment, check the provided code, and make clear you understand what we ask for.
 * Try to estimate the time you require to finish it.
 * Email us your estimation and a date, where you expect the work to be done.
   Aim for realistic date and keep in mind all other responsibilities you may have
@@ -51,7 +51,7 @@ Using provided UI components, implement following modifications, bugfixes or new
 - [ ] **S1**: Implement custom endpoint for marking single todo item as "done". Calling this endpoint sets `done` field to `true` and `finishedAt` field sets to current time. Use this new endpoint on client
 
 ### Advanced tasks (optional)
-- [ ] **O1**: modify the `Form` component (and related ones if needed) so the form field handles not only string, but also number and treat empty string input as `undefiened`
+- [ ] **O1**: modify the `Form` component (and related ones if needed) so the form field handles not only string, but also number and treat empty string input as `undefined`
 - [ ] **O2**: limit amount of server calls needed to necessary minimum
 
 ## Additional comments and restrictions:
