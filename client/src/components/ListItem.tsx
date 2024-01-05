@@ -1,18 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import { Checkbox } from "./Checkbox";
 import { CheckboxProps } from "@radix-ui/react-checkbox";
 import { Pencil1Icon, TrashIcon } from "@radix-ui/react-icons";
-
-const StyledDiv = styled.div`
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto 1fr auto;
-`;
-
-const Label = styled.label`
-    margin-left: 15px;
-`;
+import { ListClasses } from "./List";
 
 export type LiteItemProp = CheckboxProps & {
     label: string;
@@ -21,10 +11,10 @@ export type LiteItemProp = CheckboxProps & {
 };
 
 export const ListItem: React.FC<LiteItemProp> = ({ label, handleRemoval, handleEdit, ...checkboxProps }) => (
-    <StyledDiv>
+    <div className={ListClasses.LIST_ITEM}>
         <Checkbox {...checkboxProps} />
-        <Label>{label}</Label>
-        <div>
+        <label className={ListClasses.LABEL}>{label}</label>
+        <div className={ListClasses.ACTION_BUTTONS}>
             <button onClick={() => handleEdit()}>
                 <TrashIcon />
             </button>
@@ -33,5 +23,5 @@ export const ListItem: React.FC<LiteItemProp> = ({ label, handleRemoval, handleE
             </button>
         </div>
 
-    </StyledDiv>
+    </div>
 );
