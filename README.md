@@ -42,7 +42,7 @@ Using provided UI components, implement following modifications, bugfixes or new
    1) Persist all changes, additions and removals of todo items on server using API calls
 - [x] **F5**: Sort list of todo items so the _done_ (=checked) items are on the bottom; next sort items by creating date, descending
 - [x] **F6**: Show number of todo/done items in `Footer`
-- [ ] **F7**: Create a `Button` component and use it instead of all `button` html elements
+- [x] **F7**: Create a `Button` component and use it instead of all `button` html elements
 - [ ] **SB1**: Add story/stories for `Layout` component
 - [ ] **SB2**: Add story showing `ListItem` with visible buttons (implemented in _UI3_)
 - [ ] **SB3**: Add stories showing available `Button` variations

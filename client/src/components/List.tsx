@@ -35,6 +35,9 @@ export const ListItemStyles = styled.div`
     .${ListClasses.LIST_ITEM}:hover {
         .${ListClasses.ACTION_BUTTONS} {
             display: block;
+            button:not(:last-child)  {
+                margin-right: 5px;
+            }
         }
     }
 `;
