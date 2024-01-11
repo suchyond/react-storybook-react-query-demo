@@ -45,7 +45,7 @@ Using provided UI components, implement following modifications, bugfixes or new
 - [x] **F7**: Create a `Button` component and use it instead of all `button` html elements
 - [x] **SB1**: Add story/stories for `Layout` component
 - [x] **SB2**: Add story showing `ListItem` with visible buttons (implemented in _UI3_)
-- [ ] **SB3**: Add stories showing available `Button` variations
+- [x] **SB3**: Add stories showing available `Button` variations
 
 ### Server
 - [x] **S1**: Implement custom endpoint for marking single todo item as "done". Calling this endpoint sets `done` field to `true` and `finishedAt` field sets to current time. Use this new endpoint on client

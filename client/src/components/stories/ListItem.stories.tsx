@@ -34,7 +34,7 @@ export const Done: Story = {
 };
 export const Hover: Story = {
     args: {
-        label: "Lorem ipsum dolor Hover2",
+        label: "Lorem ipsum dolor Hover",
         injectClassNames: [FakePseudoClasses.HOVER]
     },
 };
