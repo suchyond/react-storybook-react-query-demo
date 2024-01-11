@@ -15,6 +15,7 @@ import { useCallback } from "react";
 
 
 export const AppConnected: React.FC = () => {
+    console.log("render AppConnected");
     const queryClient = useQueryClient();
     const { isPending, data } = useQuery({
         queryKey: [QueryKeys.LIST_ITEMS],
@@ -30,6 +31,17 @@ export const AppConnected: React.FC = () => {
     const submitTodo = useCallback((title: string) => {
         createMutation.mutate({title, done: false});
     }, [createMutation.mutate]);
+
+    // We could use useMemo here, if calculation was more complex and
+    // data object was more referentially stable or if objects were immutable
+    // and we can easily detect changes by theirs ids, that would change on
+    // each change.
+    // Neither is fulfilled, so memoization is not suitable here.
+    const doneItems = data?.filter((item) => item.done);
+    const doneItemsCount: number | undefined = doneItems?.length;
+    const todoItemsCount: number | undefined = (doneItemsCount && data) ?
+        data.length - doneItemsCount:
+        undefined;
 
     return (<>
         <Header handleAddItem={submitTodo}>To Do app</Header>
@@ -47,7 +59,10 @@ export const AppConnected: React.FC = () => {
                 ))
             )}
         </List>
-        <Footer />
+        <Footer
+            todoItems={todoItemsCount}
+            doneItems={doneItemsCount}
+        />
         
     </>);
 };
