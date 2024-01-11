@@ -16,4 +16,5 @@ const getUseListItemMutation= <T extends object | void>(method: string) => (
 
 export const useCreateMutation = getUseListItemMutation<ItemRequest>("POST");
 export const useModifyMutation = getUseListItemMutation<ItemRequest>("PUT");
+export const useDoneMutation = getUseListItemMutation<Omit<ItemRequest, "title">>("PATCH");
 export const useDeleteMutation = getUseListItemMutation<void>("DELETE");

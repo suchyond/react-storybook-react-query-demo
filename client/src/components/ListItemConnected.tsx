@@ -1,10 +1,11 @@
 import React, { useCallback, useReducer, useState } from "react";
 import { ListItem } from "./ListItem";
-import { CheckboxProps } from "@radix-ui/react-checkbox";
+import { CheckboxProps, CheckedState } from "@radix-ui/react-checkbox";
 import { QueryKeys } from "../api/QueryKeys";
 import { baseUrl } from "../api/url";
 import {
     useDeleteMutation,
+    useDoneMutation,
     useModifyMutation,
 } from "../api/listItemMutations";
 import { Form } from "./form";
@@ -44,6 +45,8 @@ export const ListItemConnected: React.FC<ListItemProps> = (props) => {
         () => queryClient.invalidateQueries({queryKey: [QueryKeys.LIST_ITEMS]}));
     const deleteMutation = useDeleteMutation(baseUrl + "/items/" + props.itemId,
         () => queryClient.invalidateQueries({queryKey: [QueryKeys.LIST_ITEMS]}));
+    const doneMutation = useDoneMutation(baseUrl + "/items/done/" + props.itemId,
+        () => queryClient.invalidateQueries({queryKey: [QueryKeys.LIST_ITEMS]}));
 
     // modifyMutation.mutate({})
     const editBtnClick = useCallback(() => {
@@ -60,6 +63,12 @@ export const ListItemConnected: React.FC<ListItemProps> = (props) => {
     const submitEdit = useCallback((title: string) => {
         modifyMutation.mutate({title});
     }, [modifyMutation.mutate]);
+    const checkboxClick = useCallback((checked: CheckedState) => {
+        // "indeterminate" will be considered as "checked". It should not be
+        // a problem as there are currently no nested checkboxes, that would 
+        // require "indeterminate" state
+        doneMutation.mutate({done: !!checked});
+    }, [doneMutation.mutate]);
 
     if (state.isEditing) {
         return (<Form
@@ -74,6 +83,8 @@ export const ListItemConnected: React.FC<ListItemProps> = (props) => {
             label={props.label}
             handleEdit={editBtnClick}
             handleRemoval={deleteMutation.mutate}
+            checked={props.checked}
+            onCheckedChange={checkboxClick}
         />
     );
 };

@@ -42,6 +42,7 @@ export const AppConnected: React.FC = () => {
                         key={item.id}
                         itemId={item.id}
                         label={item.title}
+                        checked={item.done}
                     />
                 ))
             )}
