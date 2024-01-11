@@ -29,7 +29,7 @@ Using provided UI components, implement following modifications, bugfixes or new
 
 - [ ] **B1**: Fix all bugs and visual imperfections you find
 - [x] **B2**: Fix layout of non-empty `List` component
-- [ ] **B3**: Fix Layout component so the `Footer` is always attached to its bottom
+- [x] **B3**: Fix Layout component so the `Footer` is always attached to its bottom
 - [x] **UI1**: Style `Header` so the button is aligned on the right
 - [x] **UI2**: Style `ListItem` so action buttons are aligned on the right
 - [x] **UI3**: Style `ListItem` so the action buttons are only visible when hovering over the item
@@ -48,7 +48,7 @@ Using provided UI components, implement following modifications, bugfixes or new
 - [ ] **SB3**: Add stories showing available `Button` variations
 
 ### Server
-- [ ] **S1**: Implement custom endpoint for marking single todo item as "done". Calling this endpoint sets `done` field to `true` and `finishedAt` field sets to current time. Use this new endpoint on client
+- [x] **S1**: Implement custom endpoint for marking single todo item as "done". Calling this endpoint sets `done` field to `true` and `finishedAt` field sets to current time. Use this new endpoint on client
 
 ### Advanced tasks (optional)
 - [ ] **O1**: modify the `Form` component (and related ones if needed) so the form field handles not only string, but also number and treat empty string input as `undefined`

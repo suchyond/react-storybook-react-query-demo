@@ -12,4 +12,5 @@ export const Layout = styled.main`
     min-height: 50vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 `;

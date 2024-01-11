@@ -42,11 +42,15 @@ export const ListItemStyles = styled.div`
 const ListStyles = styled(ListItemStyles)`
     display: flex;
     flex-direction: column;
+    padding-top: 15px;
+    border-top: 1px solid;
+    border-color: ${(props) => props.theme.colors.olive6};
+
     > div:not(:last-child) {
         margin-bottom: 5px;
     }
     > div {
-        border-bottom: 1px solid;
+        border-bottom: 1px dashed;
         border-color: ${(props) => props.theme.colors.olive6}; 
     }
     > div:not(:first-child) {

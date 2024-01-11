@@ -15,7 +15,6 @@ import { useCallback } from "react";
 
 
 export const AppConnected: React.FC = () => {
-    console.log("render AppConnected");
     const queryClient = useQueryClient();
     const { isPending, data } = useQuery({
         queryKey: [QueryKeys.LIST_ITEMS],
@@ -44,21 +43,23 @@ export const AppConnected: React.FC = () => {
         undefined;
 
     return (<>
-        <Header handleAddItem={submitTodo}>To Do app</Header>
-        <List>
-            {isPending ? (
-                <div>Loading...</div>
-            ) : (
-                data?.map((item) => (
-                    <ListItemConnected
-                        key={item.id}
-                        itemId={item.id}
-                        label={item.title}
-                        checked={item.done}
-                    />
-                ))
-            )}
-        </List>
+        <div>
+            <Header handleAddItem={submitTodo}>To Do app</Header>
+            <List>
+                {isPending ? (
+                    <div>Loading...</div>
+                ) : (
+                    data?.map((item) => (
+                        <ListItemConnected
+                            key={item.id}
+                            itemId={item.id}
+                            label={item.title}
+                            checked={item.done}
+                        />
+                    ))
+                )}
+            </List>
+        </div>
         <Footer
             todoItems={todoItemsCount}
             doneItems={doneItemsCount}

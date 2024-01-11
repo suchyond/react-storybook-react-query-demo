@@ -11,6 +11,8 @@ export type HeaderProps = {
 const StyledDiv = styled.header`
     display: flex;
     justify-content: space-between;
+    margin-bottom: 15px;
+ 
     button {
         all: unset;
         border-radius: 50%;
