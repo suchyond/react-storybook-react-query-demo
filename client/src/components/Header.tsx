@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 import { PlusIcon } from "@radix-ui/react-icons";
+import { Form } from "./form";
 
 export type HeaderProps = {
     children: React.ReactNode;
-    handleAddItem: () => void;
+    handleAddItem: (data: string) => void;
 };
 
 const StyledDiv = styled.header`
@@ -22,11 +23,26 @@ const StyledDiv = styled.header`
     }
 `;
 
-export const Header: React.FC<HeaderProps> = ({ handleAddItem, children }) => (
-    <StyledDiv>
+export const Header: React.FC<HeaderProps> = ({ handleAddItem, children }) => {
+    const [isAddForm, setIsAddForm] = React.useState(false);
+
+    const hideEditForm = useCallback(() => {
+        setIsAddForm(false)
+    }, []);
+
+    return (<StyledDiv>
         <h1>{children}</h1>
-        <button onClick={() => handleAddItem()}>
-            <PlusIcon width={25} height={25}/>
-        </button>
-    </StyledDiv>
-);
+        {isAddForm ? (
+            <Form
+                handleSubmit={handleAddItem}
+                handleCancel={hideEditForm}
+                initialValue={''}
+            />
+        ): (
+            <button onClick={() => setIsAddForm(true)}>
+                <PlusIcon width={25} height={25}/>
+            </button>
+        )}
+
+    </StyledDiv>);
+};
