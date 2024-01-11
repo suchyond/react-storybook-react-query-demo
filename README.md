@@ -28,7 +28,7 @@ More information about client are in `client/README.md`. Make sure you read them
 Using provided UI components, implement following modifications, bugfixes or new features (you can decide in what order):
 
 - [ ] **B1**: Fix all bugs and visual imperfections you find
-- [ ] **B2**: Fix layout of non-empty `List` component
+- [x] **B2**: Fix layout of non-empty `List` component
 - [ ] **B3**: Fix Layout component so the `Footer` is always attached to its bottom
 - [x] **UI1**: Style `Header` so the button is aligned on the right
 - [x] **UI2**: Style `ListItem` so action buttons are aligned on the right
