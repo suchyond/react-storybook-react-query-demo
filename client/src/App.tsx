@@ -14,11 +14,11 @@ export const App: React.FC = () => {
     return (
         <ThemeProvider>
             <Container>
-                <Layout>
-                    <QueryClientProvider client={queryClient}>
+                <QueryClientProvider client={queryClient}>
+                    <Layout>
                         <AppConnected/>
-                    </QueryClientProvider>
-                </Layout>
+                    </Layout>
+                </QueryClientProvider>
             </Container>
         </ThemeProvider>
     );
