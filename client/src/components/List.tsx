@@ -15,10 +15,9 @@ export enum ListClasses {
     LABEL = 'list-item__label',
 };
 
-const ListStyles = styled.div`
-    display: flex;
-    flex-direction: column;
-
+// Separate styles for Storybook, could be used if we want to style outside
+// of the list, i.g. in some form or something.
+export const ListItemStyles = styled.div`
     .${ListClasses.LIST_ITEM} {
         display: grid;
         align-items: center;
@@ -38,6 +37,11 @@ const ListStyles = styled.div`
             display: block;
         }
     }
+`;
+
+const ListStyles = styled(ListItemStyles)`
+    display: flex;
+    flex-direction: column;
 `;
 
 export const List: React.FC<PropsWithChildren> = ({ children }) => {
