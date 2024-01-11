@@ -53,9 +53,9 @@ export const ListItemConnected: React.FC<ListItemProps> = (props) => {
         dispatch({type: "handleEdit"});
     }, [/* No need to add dispatch it is referentially stable between renders */]);
 
-    /*const handleRemoval = useCallback(() => {
+    const handleRemoval = useCallback(() => {
         deleteMutation.mutate();
-    }, [deleteMutation.mutate]);*/
+    }, [deleteMutation.mutate]);
 
     const hideEditForm = useCallback(() => {
         dispatch({type: "cancelEdit"});
@@ -82,7 +82,7 @@ export const ListItemConnected: React.FC<ListItemProps> = (props) => {
         <ListItem
             label={props.label}
             handleEdit={editBtnClick}
-            handleRemoval={deleteMutation.mutate}
+            handleRemoval={handleRemoval}
             checked={props.checked}
             onCheckedChange={checkboxClick}
         />
