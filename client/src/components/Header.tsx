@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ handleAddItem, children }) => (
     <StyledDiv>
         <h1>{children}</h1>
         <button onClick={() => handleAddItem()}>
-            <PlusIcon />
+            <PlusIcon width={25} height={25}/>
         </button>
     </StyledDiv>
 );
