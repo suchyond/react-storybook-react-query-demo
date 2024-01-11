@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import styled from "styled-components";
+import { FakePseudoClasses } from "./FakePseudoClasses";
 
 // Using classes instead multiple styled components locally, can significantly
 // speed up render times for e.g. lists whit repeating entries of same styles,
@@ -32,7 +33,8 @@ export const ListItemStyles = styled.div`
         display: none;
     }
 
-    .${ListClasses.LIST_ITEM}:hover {
+    .${ListClasses.LIST_ITEM}:hover,
+    .${ListClasses.LIST_ITEM}.${FakePseudoClasses.HOVER} {
         .${ListClasses.ACTION_BUTTONS} {
             display: block;
             button:not(:last-child)  {

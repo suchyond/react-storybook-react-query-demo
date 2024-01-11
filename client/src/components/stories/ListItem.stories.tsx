@@ -3,6 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { ListItem } from "../ListItem";
 import { ListItemStyles } from "../List";
 import React from "react";
+import { FakePseudoClasses } from "../FakePseudoClasses";
 
 const ListItemStyleDecorator = (ListItem: React.FunctionComponent) => 
     <ListItemStyles>
@@ -29,5 +30,11 @@ export const Done: Story = {
     args: {
         ...ToDo.args,
         checked: true,
+    },
+};
+export const Hover: Story = {
+    args: {
+        label: "Lorem ipsum dolor Hover2",
+        injectClassNames: [FakePseudoClasses.HOVER]
     },
 };

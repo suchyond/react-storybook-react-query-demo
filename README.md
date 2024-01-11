@@ -44,7 +44,7 @@ Using provided UI components, implement following modifications, bugfixes or new
 - [x] **F6**: Show number of todo/done items in `Footer`
 - [x] **F7**: Create a `Button` component and use it instead of all `button` html elements
 - [x] **SB1**: Add story/stories for `Layout` component
-- [ ] **SB2**: Add story showing `ListItem` with visible buttons (implemented in _UI3_)
+- [x] **SB2**: Add story showing `ListItem` with visible buttons (implemented in _UI3_)
 - [ ] **SB3**: Add stories showing available `Button` variations
 
 ### Server

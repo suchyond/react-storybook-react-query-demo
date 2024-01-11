@@ -5,7 +5,7 @@ import { AppConnected } from "../../AppConnected";
 import { QueryKeys } from "../../api/QueryKeys";
 
 
-const queryClient = new QueryClient(/*{queryCache}*/);
+const queryClient = new QueryClient();
 
 const mockTodos = [
     {
