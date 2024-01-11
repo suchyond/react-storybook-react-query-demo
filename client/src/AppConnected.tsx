@@ -5,7 +5,7 @@ import {
     useQuery,
     useQueryClient,
 } from "@tanstack/react-query";
-import { ItemResponse } from "../../shared/types/item";
+import { ItemResponse } from "./types/item";
 import { QueryKeys } from "./api/QueryKeys";
 import { baseUrl } from "./api/url";
 import { useCreateMutation } from "./api/listItemMutations";

@@ -1,11 +1,12 @@
-// TODO: Use better sharing of code between server and client,
-// e.g. yarn workspaces
+// TODO: Use some kind of sharing of interfaces between server and client,
+// e.g. yarn workspaces or something like that
 /**
  * Request body that are send from client to the server
  */
 export interface ItemRequest {
     title: string;
     done?: boolean;
+    finishedAt?: number;
     
 }
 

@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { ItemRequest } from "../../../shared/types/item";
+import { ItemRequest } from "../types/item";
 
 const getUseListItemMutation= <T extends object | void>(method: string) => (
     url: string, onSuccess: () => void,
