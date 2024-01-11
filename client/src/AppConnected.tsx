@@ -9,6 +9,7 @@ import { ItemResponse } from "../../shared/types/item";
 import { QueryKeys } from "./api/QueryKeys";
 import { baseUrl } from "./api/url";
 import { useCreateMutation } from "./api/listItemMutations";
+import { ListItemConnected } from "./components/ListItemConnected";
 import { useCallback } from "react";
 
 
@@ -37,11 +38,10 @@ export const AppConnected: React.FC = () => {
                 <div>Loading...</div>
             ) : (
                 data?.map((item) => (
-                    <ListItem
+                    <ListItemConnected
                         key={item.id}
+                        itemId={item.id}
                         label={item.title}
-                        handleEdit={() => { /* FIXME */}}
-                        handleRemoval={() => { /* FIXME */}}
                     />
                 ))
             )}
